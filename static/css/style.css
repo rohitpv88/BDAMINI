@@ -1,0 +1,139 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/449/070/non_2x/agriculture-plant-seedling-growing-step-concept-with-mountain-and-sunrise-background-free-photo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.navbar {
+    background-color: #4B92BB;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.form-group label {
+    font-family: 'Playfair Display', serif;
+}
+
+.dropzone {
+    border: 2px dashed black;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone:hover {
+    background-color: #e9ecef;
+}
+
+.upload-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.dropdown-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn-analyze {
+    font-family: 'Playfair Display', serif;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s, font-size 0.3s;
+    font-weight: bold;
+}
+
+.btn-analyze:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-analyze.clicked {
+    color: #0056b3;
+    font-size: 0.9em;
+}
+
+.analyze-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loader {
+    display: none;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loading {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.result-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-box {
+    background-color: white;
+    color: black;
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-box h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.medicine-box, .cause-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.medicine-box {
+    background-color: #e9f5e9;
+}
+
+.cause-box {
+    background-color: #f9f3e9;
+}
+
+.result-box span {
+    font-weight: bold;
+    color: #007bff;
+}

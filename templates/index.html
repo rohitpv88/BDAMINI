@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crop Diseases Prediction</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Crop Diseases Predictor</a>
+        </div>
+    </nav>
+    <div class="container" style="margin-top:2em">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Crop Diseases Prediction:</h3>
+                <p class="centered-paragraph">The crop diseases prediction system is an AI-driven platform that uses deep learning, specifically Convolutional Neural Networks (CNNs), to identify and predict plant diseases from leaf images. By analyzing visual patterns, the system accurately detects diseases early, enabling timely interventions to prevent crop damage. Implemented using Python Flask, it offers a user-friendly interface for farmers and agricultural professionals to upload images and receive disease diagnoses and management recommendations.</p>
+            </div>
+            <div class="col-sm-6">
+                <h4>Select Crop and Upload Image to Identify Crop Diseases</h4>
+                <form action="/predict" id="upload-file" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="cropSelect">Select Crop:</label>
+                        <select class="form-control" id="cropSelect" name="crop">
+                            <option value="wheat">Wheat</option>
+                            <option value="maize">Maize</option>
+                        </select>
+                    </div>
+                    <div class="dropzone" id="dropzone">
+                        <div class="upload-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1375/1375106.png" alt="Upload Icon">
+                        </div>
+                        <p>Drag & Drop Image Here or Click to Select</p>
+                        <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" class="upload-area">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/expand-arrow.png" alt="Dropdown Icon" class="dropdown-icon">
+                    </div>
+                    <div class="analyze-button-container">
+                        <button type="button" class="btn btn-analyze" id="btn-analyze">Analyze</button>
+                    </div>
+                    <div class="loader" id="loader">Detecting diseases...</div>
+                    <div class="result-container" id="result-container">
+                        <div class="result-box" id="result-box">
+                            <h3>Predicted Disease: <span id="result"></span></h3>
+                            <div class="medicine-box" id="medicine-box">
+                                <h4>Recommended Medicine:</h4>
+                                <p id="medicine"></p>
+                            </div>
+                            <div class="cause-box" id="cause-box">
+                                <h4>Cause of the Disease:</h4>
+                                <p id="cause"></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript"></script>
+</body>
+</html>
