@@ -12,8 +12,8 @@ UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Initialize model paths
-wheat_model_path = os.path.join(os.path.dirname(__file__), 'models', 'wheat.h5')
-maize_model_path = os.path.join(os.path.dirname(__file__), 'models', 'maize.h5')
+wheat_model_path = os.path.join(os.path.dirname(__file__), 'wheat.h5')
+maize_model_path = os.path.join(os.path.dirname(__file__), 'maize.h5')
 
 # Load models
 def load_model(model_path):
