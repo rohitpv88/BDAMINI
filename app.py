@@ -7,6 +7,9 @@ from PIL import Image
 
 app = Flask(__name__)
 
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
 # Path to save uploaded images
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
