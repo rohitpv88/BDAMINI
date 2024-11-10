@@ -1,1 +1,4 @@
-pp
+flask
+tensorflow
+pillow
+numpy
